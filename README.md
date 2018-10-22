@@ -9,3 +9,13 @@ php -r "unlink('composer-setup.php');"
 ./composer.phar global require "laravel/installer"
 
 ./composer.phar create-project --prefer-dist laravel/laravel inventory
+
+php artisan make:model Product --migrate
+
+php artisan make:controller ProductController
+
+../composer.phar require "laravelcollective/html":"^5.3.0"
+
+../composer.phar require laracasts/flash
+
+php artisan make:request ProductFormRequest
