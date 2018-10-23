@@ -44,6 +44,7 @@ class ProductController extends Controller
         $product->description = $request['description'];
         $product->price = $request['price'];
         $product->category = $request['category'];
+        $product->stock = 0;
         $product->save();
 
         flash('Your product has been created!')->success();
