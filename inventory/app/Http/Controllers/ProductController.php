@@ -72,7 +72,8 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::find($id);
+        return view('products.edit', array('product' => $product));
     }
 
     /**
@@ -81,9 +82,19 @@ class ProductController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update($id)
+    public function update($id, Request $request)
     {
-        //
+        $product = Product::find($id);
+        $product->name = $request['name'];
+        $product->description = $request['description'];
+        $product->price = $request['price'];
+        $product->category = $request['category'];
+        $product->stock = $request['stock'];
+        $product->save();
+
+        flash('Your product has been updated!')->success();
+
+        return redirect()->route('products.show', $id);
     }
 
     /**

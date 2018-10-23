@@ -5,6 +5,7 @@
     </head>
     <body>
         <h1>Product {{ $product->id }}</h1>
+        <p><a href="{{ $product->id }}/edit">Edit</a></p>
         <ul>
             <li>Name: {{ $product->name }}</li>
             <li>Description: {{ $product->description }}</li>
