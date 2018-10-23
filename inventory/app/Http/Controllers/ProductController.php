@@ -49,7 +49,7 @@ class ProductController extends Controller
 
         flash('Your product has been created!')->success();
 
-        return redirect()->route('products.create');
+        return redirect()->route('products.show', $product->id);
     }
 
     /**
