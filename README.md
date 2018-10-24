@@ -19,3 +19,9 @@ php artisan make:controller ProductController
 ../composer.phar require laracasts/flash
 
 php artisan make:request ProductFormRequest
+
+
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate
